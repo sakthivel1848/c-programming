@@ -1,0 +1,54 @@
+ #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+struct Passenger {
+    char name[50];
+    int age;
+    char gender;
+    int passenger_id;
+};
+struct Train {
+    int train_number;
+    char train_name[50];
+    char source[50];
+    char destination[50];
+    int available_seats;
+};
+struct Reservation {
+    int pnr;
+    int train_number;
+    int passenger_id;
+    int seat_number;
+};
+void book_ticket();
+void view_trains();
+int main() {
+    int choice;
+    do {
+        printf("\n--- Train Ticket Booking System ---\n");
+        printf("1. Book Ticket\n");
+        printf("2. View Available Trains\n");
+        printf("3. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+        switch (choice) {
+            case 1:
+                book_ticket();
+                break;
+            case 2:
+                view_trains();
+                break;
+            case 3:
+                printf("Exiting program. Goodbye!\n");
+                break;
+            default:
+                printf("Invalid choice. Please try again.\n");
+        }
+    } while (choice != 3);
+    return 0;
+}
+void book_ticket() {
+}
+
+void view_trains() {
+}
