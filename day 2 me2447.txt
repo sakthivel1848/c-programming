@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+int main() {
+    char name[50];
+    int roll_number;
+    int subject1_marks, subject2_marks, subject3_marks, subject4_marks, subject5_marks;
+    int total_marks;
+    float percentage;
+    printf("Enter student name: ");
+    fgets(name, sizeof(name), stdin); 
+    printf("Enter roll number: ");
+    scanf("%d", &roll_number);
+    printf("Enter marks for Subject 1 (out of 100):");
+    scanf("%d", &subject1_marks);
+    printf("Enter marks for Subject 2 ( 0ut of 100):");
+    scanf("%d", &subject2_marks);
+    printf("Enter marks for Subject 3 (out of 100):");
+    scanf("%d", &subject3_marks);
+    printf("Enter marks for Subject 4 (out of 100): ");
+    scanf("%d", &subject4_marks);
+    printf("Enter marks for Subject 5 (out of 100): ");
+    scanf("%d", &subject5_marks);
+    total_marks = subject1_marks + subject2_marks + subject3_marks + subject4_marks + subject5_marks;
+    percentage = (float)total_marks / 5.0; 
+    printf("\n--- Student Marksheet ---\n");
+    printf("Name: %s", name); 
+    printf("Roll Number: %d\n", roll_number);
+    printf("-------------------------\n");
+    printf("Subject 1 Marks: %d\n", subject1_marks);
+    printf("Subject 2 Marks: %d\n", subject2_marks);
+    printf("Subject 3 Marks: %d\n", subject3_marks);
+    printf("Subject 4 Marks: %d\n", subject4_marks);
+    printf("Subject 5 Marks: %d\n", subject5_marks);
+    printf("-------------------------\n");
+    printf("Total Marks: %d\n", total_marks);
+    printf("Percentage: %.2f%%\n", percentage);
+    if (percentage >= 35) {
+        printf("Result: PASS\n");
+    } else {
+        printf("Result: FAIL\n");
+    }
+
+    return 0;
+}
