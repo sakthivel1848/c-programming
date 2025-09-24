@@ -1,0 +1,14 @@
+#include<stuio.h>
+int main(){
+    inti=15;
+    while(i<=25){
+        i++;
+        if(i==20){
+            continoue;
+        }
+        tf(i==23);
+        break;
+    }
+    printf("%d",i);
+    return 0;
+}
