@@ -1,0 +1,22 @@
+#include <stdio.h>
+int main() {
+    int num = 0;
+    printf("Enter a number (negative to exit): ");
+    scanf("%d", &num);
+    if (num < 0) {
+        goto exit;
+    }
+    printf("You entered: %d\n", num);
+    goto start;
+exit:
+    printf("Exiting the program. Goodbye!\n");
+    return 0;
+start:
+    printf("Enter another number (negative to exit): ");
+    scanf("%d", &num);
+    if (num < 0) {
+        goto exit;
+    }
+    printf("You entered: %d\n", num);
+    goto start;
+}
