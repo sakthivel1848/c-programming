@@ -1,0 +1,39 @@
+#include <stdio.h>
+int main() {
+    int rows, cols, i, j;
+    printf("Enter the number of rows and columns of the matrix: ");
+    scanf("%d %d", &rows, &cols);
+    int matrix[rows][cols];
+    printf("Enter the elements of the matrix:\n");
+    for (i = 0; i < rows; i++) {
+        for (j = 0; j < cols; j++) {
+            scanf("%d", &matrix[i][j]);
+        }
+    }
+    int part1[rows * cols], part2[rows * cols], part3[rows * cols];
+    int p1 = 0, p2 = 0, p3 = 0;
+    for (i = 0; i < rows; i++) {
+        for (j = 0; j < cols; j++) {
+            if (matrix[i][j] < 10) {
+                part1[p1++] = matrix[i][j];
+            } else if (matrix[i][j] >= 10 && matrix[i][j] <= 20) {
+                part2[p2++] = matrix[i][j];
+            } else {
+                part3[p3++] = matrix[i][j];
+            }
+        }
+    }
+    printf("\nPart 1 (values < 10): ");
+    for (i = 0; i < p1; i++) {
+        printf("%d ", part1[i]);
+    }
+    printf("\nPart 2 (values between 10 and 20): ");
+    for (i = 0; i < p2; i++) {
+        printf("%d ", part2[i]);
+    }
+    printf("\nPart 3 (values > 20): ");
+    for (i = 0; i < p3; i++) {
+        printf("%d ", part3[i]);
+    }
+    return 0;
+}
